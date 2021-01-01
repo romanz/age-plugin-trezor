@@ -122,8 +122,10 @@ fn main() -> io::Result<()> {
     if let Some(state_machine) = opts.age_plugin {
         run_state_machine(&state_machine, || RecipientPlugin, || IdentityPlugin)
     } else {
+        let identity = opts.identity.unwrap();
+        let recipient = "<pubkey>";
         // A real plugin would generate a new identity here.
-        print_new_identity(PLUGIN_NAME, &[], &[]);
+        print_new_identity(PLUGIN_NAME, identity.as_bytes(), recipient.as_bytes());
         Ok(())
     }
 }
