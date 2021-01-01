@@ -1,0 +1,15 @@
+[package]
+name = "age-plugin-trezor"
+version = "0.1.0"
+authors = ["Roman Zeyde <me@romanzey.de>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+age-core = { path = "../rage/age-core", features = ["plugin", "unstable"] }
+age-plugin = { path = "../rage/age-plugin"}
+bech32 = "0.7.2"
+chrono = "0.4"
+secrecy = "0.7"
+gumdrop = "0.8"
